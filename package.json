@@ -7,7 +7,7 @@
     "start": "next start",
     "chunk": "python3 scripts/chunk.py",
     "embed": "tsx scripts/embed.ts",
-    "eval": "tsx scripts/smoke.ts"
+    "eval": "node --env-file=.env.local --conditions=react-server --import tsx scripts/smoke.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.83",
