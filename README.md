@@ -2,6 +2,9 @@
 
 A public RAG assistant for Philippine government procurement. It is grounded in the **IRR of RA No. 12009 (New Government Procurement Act)**, the governing law. The **2016 Revised IRR of RA No. 9184** (updated 19 July 2024) is included only as a repealed, reference-only source. Every answer streams in with numbered citations that give the section and page and link to the official PDF at that page.
 
+**Developer & Owner:** Richard Ronald B. Cacho, MD, MHA, Public Procurement Specialist Level 2
+**Version:** 01 (2026) · **License:** Proprietary — all rights reserved (see `LICENSE`)
+
 *AIM MAIDA — Graded Mini Project 14.3 "Ship Your Own RAG"*
 
 ## Architecture
@@ -52,3 +55,6 @@ npm run dev                       # http://localhost:3000
 | `public/docs/ra9184-irr-2016-rev-2024.pdf` | 422 | Repealed: reference only |
 
 Source: Government Procurement Policy Board (gppb.gov.ph). This is a research aid, not a legal opinion.
+
+## Ownership
+© 2026 Richard Ronald B. Cacho, MD, MHA, Public Procurement Specialist Level 2. Proprietary software, all rights reserved. The source is published for academic assessment only; reuse or redistribution requires written permission. The IRR texts in `public/docs` are official Government of the Philippines works and are not claimed.

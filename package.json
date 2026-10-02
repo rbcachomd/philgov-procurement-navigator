@@ -1,6 +1,6 @@
 {
   "name": "philgov-procurement-navigator",
-  "version": "1.0.0",
+  "version": "2026.1.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -27,5 +27,8 @@
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   },
-  "private": true
+  "private": true,
+  "description": "PhilGov Procurement Navigator \u2013 RAG assistant grounded in the IRR of RA 12009. Version 01 (2026).",
+  "author": "Richard Ronald B. Cacho, MD, MHA <rbcachomd@gmail.com>",
+  "license": "UNLICENSED"
 }

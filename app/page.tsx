@@ -109,6 +109,11 @@ export default function Page() {
                 </button>
               ))}
             </div>
+            <div className="author-card">
+              <div className="author-name">Richard Ronald B. Cacho, MD, MHA</div>
+              <div className="author-role">Public Procurement Specialist Level 2</div>
+              <div className="author-meta">Developer &amp; Owner · Version 01 · 2026</div>
+            </div>
             <p className="fineprint">
               Research aid only — not a legal opinion. For binding interpretation, refer to GPPB resolutions and GPPB-TSO
               advisories.
@@ -231,6 +236,9 @@ export default function Page() {
             Ask
           </button>
         )}
+        <div className="credit">
+          © 2026 Richard Ronald B. Cacho, MD, MHA · Public Procurement Specialist Level 2 · Version 01 · Proprietary — all rights reserved
+        </div>
       </form>
     </div>
   );
