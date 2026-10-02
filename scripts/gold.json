@@ -1,0 +1,222 @@
+[
+ {
+  "q": "What are the modes of procurement under the new law?",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 26
+   }
+  ]
+ },
+ {
+  "q": "How much bid security is required and in what form?",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 56
+   }
+  ],
+  "law": "ra12009"
+ },
+ {
+  "q": "Who are the members of the Bids and Awards Committee?",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 41
+   }
+  ]
+ },
+ {
+  "q": "When can the BAC declare a failure of bidding?",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 64
+   }
+  ]
+ },
+ {
+  "q": "small value procurement threshold",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 34
+   }
+  ]
+ },
+ {
+  "q": "grounds for blacklisting a supplier or contractor",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 100
+   },
+   {
+    "docId": "ra12009",
+    "section": 101
+   },
+   {
+    "docId": "ra12009",
+    "section": 98
+   }
+  ]
+ },
+ {
+  "q": "How long is the bid validity period?",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 57
+   }
+  ]
+ },
+ {
+  "q": "performance security amount for goods contracts",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 68
+   }
+  ]
+ },
+ {
+  "q": "How does a bidder file a protest against a BAC decision?",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 83
+   },
+   {
+    "docId": "ra12009",
+    "section": 84
+   }
+  ]
+ },
+ {
+  "q": "What is splitting of government contracts?",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 39
+   }
+  ]
+ },
+ {
+  "q": "Are observers allowed in BAC proceedings?",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 43
+   }
+  ]
+ },
+ {
+  "q": "honoraria of BAC members",
+  "law": "ra9184",
+  "expect": [
+   {
+    "docId": "ra9184",
+    "section": 15
+   },
+   {
+    "docId": "ra9184",
+    "label": "Appendix 7"
+   }
+  ]
+ },
+ {
+  "q": "What is a framework agreement and when can it be used?",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 16
+   }
+  ]
+ },
+ {
+  "q": "post-qualification process for the lowest calculated bid",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 63
+   }
+  ]
+ },
+ {
+  "q": "emergency cases negotiated procurement",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 35
+   }
+  ]
+ },
+ {
+  "q": "procurement of common-use supplies from the PS-DBM",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 40
+   }
+  ]
+ },
+ {
+  "q": "liquidated damages for delay in delivery",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 97
+   }
+  ]
+ },
+ {
+  "q": "transitory provision for procurement already started under RA 9184",
+  "law": "ra12009",
+  "expect": [
+   {
+    "docId": "ra12009",
+    "section": 113
+   }
+  ]
+ },
+ {
+  "q": "documentary requirements for shopping and small value procurement under RA 9184",
+  "law": "ra9184",
+  "expect": [
+   {
+    "docId": "ra9184",
+    "label": "Annex H"
+   }
+  ]
+ },
+ {
+  "q": "contract price escalation guidelines",
+  "law": "ra9184",
+  "expect": [
+   {
+    "docId": "ra9184",
+    "label": "Appendix 15"
+   },
+   {
+    "docId": "ra9184",
+    "section": 61
+   }
+  ]
+ }
+]
