@@ -6,12 +6,25 @@ import ReactMarkdown from 'react-markdown';
 import type { SourceRef } from '@/lib/types';
 
 const SUGGESTIONS = [
-  'What are the modes of procurement under RA 12009?',
-  'How much bid security is required, and in what forms?',
-  'Who composes the Bids and Awards Committee and what are its functions?',
-  'When may a procuring entity declare a failure of bidding?',
-  'What is Competitive Dialogue and when may it be used?',
-  'What are the grounds and process for blacklisting a supplier?',
+  { tag: 'Modes', q: 'What are the modes of procurement under RA 12009?' },
+  { tag: 'Bidding', q: 'How much bid security is required, and in what forms?' },
+  { tag: 'BAC', q: 'Who composes the Bids and Awards Committee and what are its functions?' },
+  { tag: 'Bidding', q: 'When may a procuring entity declare a failure of bidding?' },
+  { tag: 'Modes', q: 'What is Competitive Dialogue and when may it be used?' },
+  { tag: 'Sanctions', q: 'What are the grounds and process for blacklisting a supplier?' },
+];
+
+const STATS = [
+  { k: '116', v: 'Sections of the RA 12009 IRR indexed' },
+  { k: '193', v: 'Pages of governing rules, searchable' },
+  { k: '100%', v: 'Retrieval hit-rate on 20 benchmark questions' },
+  { k: 'p. #', v: 'Every claim cited to section & page' },
+];
+
+const STEPS = [
+  { n: '01', t: 'Ask in plain language', d: 'Type a question the way a BAC member, end-user or supplier would ask it.' },
+  { n: '02', t: 'The IRR is searched', d: 'A retrieval tool runs hybrid semantic + keyword search over every section of RA 12009.' },
+  { n: '03', t: 'Answer with proof', d: 'A concise answer streams in with numbered citations that open the PDF at the cited page.' },
 ];
 
 type ToolOutput = { query: string; law: string; count: number; sources: SourceRef[] };
@@ -53,6 +66,7 @@ export default function Page() {
   const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (messages.length === 0) return; // keep the landing page at the top
     endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }, [messages, status]);
 
@@ -83,17 +97,74 @@ export default function Page() {
       <main className="thread">
         {messages.length === 0 ? (
           <section className="empty">
-            <h1>Ask the procurement rules, get the section.</h1>
-            <p className="lede">
-              A retrieval-augmented assistant for BAC members, end-users, Secretariat staff and suppliers. Every answer is
-              drawn from the official Implementing Rules and Regulations and cites the exact section and page, with a link
-              to the source PDF.
-            </p>
+            <div className="hero">
+              <svg className="hero-sun" viewBox="-100 -100 200 200" aria-hidden>
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <g key={i} transform={`rotate(${i * 45})`}>
+                    <polygon points="0,-36 -5,-92 5,-92" />
+                    <polygon points="0,-36 -3,-80 3,-80" transform="rotate(-12)" />
+                    <polygon points="0,-36 -3,-80 3,-80" transform="rotate(12)" />
+                  </g>
+                ))}
+                <circle r="30" />
+              </svg>
+              <span className="eyebrow">RA No. 12009 · New Government Procurement Act</span>
+              <h1>
+                Ask the procurement rules.
+                <br />
+                <em>Get the exact section.</em>
+              </h1>
+              <p className="lede">
+                A retrieval-augmented assistant for BAC members, Secretariats, end-users and suppliers. Every answer is
+                grounded in the official Implementing Rules and Regulations and cited to the section and page.
+              </p>
+              <div className="hero-cta">
+                <button type="button" className="cta" onClick={() => ask(SUGGESTIONS[0].q)}>
+                  Try a sample question →
+                </button>
+                <a className="cta-ghost" href="/docs/ra12009-irr.pdf" target="_blank" rel="noreferrer">
+                  Read the IRR (PDF)
+                </a>
+              </div>
+            </div>
+
+            <div className="stats">
+              {STATS.map((x) => (
+                <div key={x.v} className="stat">
+                  <div className="stat-k">{x.k}</div>
+                  <div className="stat-v">{x.v}</div>
+                </div>
+              ))}
+            </div>
+
+            <h2 className="section-title">Start with a question</h2>
+            <div className="chips">
+              {SUGGESTIONS.map((s) => (
+                <button key={s.q} type="button" className="chip" onClick={() => ask(s.q)}>
+                  <span className="chip-tag">{s.tag}</span>
+                  <span className="chip-q">{s.q}</span>
+                  <span className="chip-go" aria-hidden>→</span>
+                </button>
+              ))}
+            </div>
+
+            <h2 className="section-title">How it works</h2>
+            <ol className="steps">
+              {STEPS.map((x) => (
+                <li key={x.n} className="step">
+                  <span className="step-n">{x.n}</span>
+                  <strong>{x.t}</strong>
+                  <span>{x.d}</span>
+                </li>
+              ))}
+            </ol>
+
+            <h2 className="section-title">The corpus</h2>
             <div className="corpus">
               <a className="corpus-card c-ra12009" href="/docs/ra12009-irr.pdf" target="_blank" rel="noreferrer">
-                <span className="badge badge-ra12009">Governing law</span>
+                <span className="badge badge-ra12009">Governing law · searched by default</span>
                 <strong>IRR of RA No. 12009</strong>
-                <span>New Government Procurement Act · 193 pp. · 23 Rules · searched by default</span>
+                <span>New Government Procurement Act · 193 pp. · 23 Rules · Sections 1–117</span>
               </a>
               <a className="corpus-card c-ra9184" href="/docs/ra9184-irr-2016-rev-2024.pdf" target="_blank" rel="noreferrer">
                 <span className="badge badge-ra9184">Reference only · repealed</span>
@@ -101,18 +172,14 @@ export default function Page() {
                 <span>Consulted only when you ask about the old rules or a comparison</span>
               </a>
             </div>
-            <div className="chips-label">Try one of these</div>
-            <div className="chips">
-              {SUGGESTIONS.map((s) => (
-                <button key={s} type="button" className="chip" onClick={() => ask(s)}>
-                  {s}
-                </button>
-              ))}
-            </div>
+
             <div className="author-card">
-              <div className="author-name">Richard Ronald B. Cacho, MD, MHA</div>
-              <div className="author-role">Public Procurement Specialist Level 2</div>
-              <div className="author-meta">Developer &amp; Owner · Version 01 · 2026</div>
+              <div className="author-mark" aria-hidden>RC</div>
+              <div>
+                <div className="author-name">Richard Ronald B. Cacho, MD, MHA</div>
+                <div className="author-role">Public Procurement Specialist Level 2</div>
+                <div className="author-meta">Developer &amp; Owner · Version 01 · 2026</div>
+              </div>
             </div>
             <p className="fineprint">
               Research aid only — not a legal opinion. For binding interpretation, refer to GPPB resolutions and GPPB-TSO
