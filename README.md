@@ -5,7 +5,7 @@ A public RAG assistant for Philippine government procurement. It is grounded in 
 **Developer & Owner:** Richard Ronald B. Cacho, MD, MHA, Public Procurement Specialist Level 2
 **Version:** 01 (2026) · **License:** Proprietary — all rights reserved (see `LICENSE`)
 
-*AIM MAIDA — Graded Mini Project 14.3 "Ship Your Own RAG"*
+*AIM Postgraduate Certificate in Generative AI & Agentic AI — Graded Mini Project 14.3 "Ship Your Own RAG"*
 
 ## Architecture
 
